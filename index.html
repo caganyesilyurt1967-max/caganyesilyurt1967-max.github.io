@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çağan Yeşilyurt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #050b1a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-color: #00d4ff;
+            --text-color: #ffffff;
+            --particle-color: #ffffff;
+            --status-green: #00ff88;
+            --insta-color: #E1306C;
+            --update-bg: rgba(0, 212, 255, 0.15);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #87CEEB;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --accent-color: #0077b6;
+            --text-color: #1e293b;
+            --particle-color: transparent;
+            --status-green: #00ad5d;
+            --update-bg: rgba(0, 119, 182, 0.1);
+        }
+
+        /* PRELOADER */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #050b1a; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 3000;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .loader-text { color: var(--accent-color); font-family: monospace; font-size: 1.2rem; margin-bottom: 20px; letter-spacing: 3px; }
+        .loader-bar-container { width: 250px; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; }
+        .loader-bar { width: 0%; height: 100%; background: var(--accent-color); animation: loadProgress 1.5s ease-in-out forwards; }
+        @keyframes loadProgress { 0% { width: 0%; } 100% { width: 100%; } }
+
+        /* DINAMIK BILDIRIM */
+        #status-notification {
+            position: fixed; top: -120px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 500px; background: var(--card-bg);
+            backdrop-filter: blur(15px); border: 1px solid var(--accent-color);
+            border-radius: 15px; padding: 15px; z-index: 2500;
+            transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+        }
+        #status-notification.show { top: 20px; }
+        .notif-text { font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
+        .notif-progress-container { width: 100%; height: 3px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; }
+        .notif-progress-bar { width: 0%; height: 100%; background: var(--accent-color); }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color); color: var(--text-color);
+            margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+            transition: background-color 0.8s ease;
+        }
+
+        .clouds { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0; transition: opacity 0.8s; }
+        [data-theme="light"] .clouds { opacity: 1; }
+        .cloud { position: absolute; background: #fff; border-radius: 100px; opacity: 0.8; animation: moveClouds 25s linear infinite; }
+
+        #celebration-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 11, 26, 0.9); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(10px); }
+        .celebration-text { font-size: 2.5rem; color: var(--accent-color); text-align: center; font-weight: bold; }
+        .confetti { position: absolute; width: 10px; height: 10px; animation: confettiFall 3s linear forwards; }
+        @keyframes confettiFall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+
+        .theme-switch { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100; background: rgba(0, 0, 0, 0.2); padding: 5px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .theme-btn { background: none; border: none; cursor: pointer; font-size: 20px; padding: 8px 12px; border-radius: 50%; opacity: 0.5; transition: 0.3s; }
+        .theme-btn.active { opacity: 1; background: var(--accent-color); color: white; box-shadow: 0 0 15px var(--accent-color); }
+
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        header { text-align: center; padding: 80px 20px; }
+        h1 { font-size: 3.8rem; color: var(--accent-color); text-shadow: 0 0 30px rgba(0, 212, 255, 0.4); margin: 0; }
+
+        .container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; padding: 20px; max-width: 1200px; }
+        .card { background: var(--card-bg); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 320px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+        .site-status { display: flex; align-items: center; justify-content: flex-end; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; }
+        .status-dot { width: 8px; height: 8px; background-color: var(--status-green); border-radius: 50%; margin-left: 8px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+
+        .update-tag { background: var(--update-bg); color: var(--accent-color); font-size: 0.7rem; padding: 5px 10px; border-radius: 5px; margin-bottom: 15px; display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(0, 212, 255, 0.2); }
+        .device-info { font-size: 0.85rem; font-weight: bold; margin-top: 10px; display: block; }
+        .info-all { color: var(--status-green); }
+        .info-pc { color: #ffcc00; }
+
+        .btn { display: block; background: var(--accent-color); color: #fff; text-decoration: none; padding: 14px; border-radius: 10px; font-weight: bold; text-align: center; margin-top: 15px; cursor: pointer; border: none; width: 100%; transition: 0.3s; }
+        .btn:hover { background: #fff; color: #000; }
+        .insta-footer { margin: 60px 0; text-align: center; }
+        .insta-btn { display: inline-flex; align-items: center; gap: 12px; background: transparent; color: #fff; text-decoration: none; padding: 12px 25px; border-radius: 50px; border: 2px solid var(--insta-color); font-weight: bold; transition: 0.4s; }
+        .insta-btn:hover { background: var(--insta-color); box-shadow: 0 0 25px var(--insta-color); transform: scale(1.05); }
+
+        footer { padding: 30px; opacity: 0.4; font-size: 0.8rem; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+    <audio id="themeSound" src="https://www.soundjay.com/buttons/sounds/button-30.mp3"></audio>
+    <audio id="popSound" src="https://www.soundjay.com/misc/sounds/magic-chime-01.mp3"></audio>
+    <audio id="notifSound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"></audio>
+
+    <div id="preloader">
+        <div class="loader-text">SİSTEM BAŞLATILIYOR...</div>
+        <div class="loader-bar-container"><div class="loader-bar"></div></div>
+    </div>
+
+    <div id="status-notification">
+        <div class="notif-text" id="notif-msg">Yükleniyor...</div>
+        <div class="notif-progress-container"><div class="notif-progress-bar" id="notif-bar"></div></div>
+    </div>
+
+    <div class="clouds"></div>
+    <div id="celebration-overlay"><div class="celebration-text">Çağan Yeşilyurt<br>İyi Oyunlar Diler! 🚀</div></div>
+
+    <div class="theme-switch">
+        <button class="theme-btn" id="lightBtn" onclick="setTheme('light')">☀️</button>
+        <button class="theme-btn active" id="darkBtn" onclick="setTheme('dark')">🌙</button>
+    </div>
+
+    <canvas id="particles-js"></canvas>
+
+    <header>
+        <h1>Çağan'ın Web Siteleri</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="site-status">AKTİF <div class="status-dot"></div></div>
+            <div class="update-tag"><i class="fas fa-history"></i> Son Güncelleme: 28 Aralık 2025</div>
+            <div>
+                <h2>XOX Oyunu</h2>
+                <p>Modern arayüzlü XOX deneyimi.</p>
+                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/xox-oyunu-projesi/')" class="btn">Hemen Oyna</button>
+        </div>
+
+        <div class="card">
+            <div class="site-status">AKTİF <div class="status-dot"></div></div>
+            <div class="update-tag"><i class="fas fa-history"></i> Son Güncelleme: 14 Kasım 2025</div>
+            <div>
+                <h2>Cagan Build</h2>
+                <p>Hayalindeki dünyayı inşa et.</p>
+                <span class="device-info info-pc"><i class="fas fa-desktop"></i> Sadece bilgisayar ile uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="btn">Oyuna Başla</button>
+        </div>
+
+        <div class="card" style="border: 2px solid var(--accent-color);">
+            <div class="site-status">YENİ <div class="status-dot"></div></div>
+            <div class="update-tag" style="background: rgba(0, 255, 136, 0.1);"><i class="fas fa-star"></i> Yeni Proje: 23 Ocak 2026</div>
+            <div>
+                <h2>Restoran Simülasyonu</h2>
+                <p>Kendi restoranını yönet ve geliştir!</p>
+                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="btn">Restoranı Yönet</button>
+        </div>
+
+        <div class="card">
+            <div class="site-status">AKTİF <div class="status-dot"></div></div>
+            <div class="update-tag"><i class="fas fa-history"></i> Son Güncelleme: 05 Ekim 2025</div>
+            <div>
+                <h2>Yemek Tarifleri</h2>
+                <p>Lezzet dolu özel tarifler.</p>
+                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/Cagan-Yemek-Tarifleri-/')" class="btn">Tariflere Bak</button>
+        </div>
+    </div>
+
+    <div class="insta-footer">
+        <a href="https://www.instagram.com/cagan196761?igsh=MTF0OXNvYmhybHpyNA==" target="_blank" class="insta-btn" onclick="playSound('click')">
+            <i class="fa-brands fa-instagram"></i> Instagram'da Takip Et
+        </a>
+    </div>
+
+    <footer>&copy; 2025 Çağan Yeşilyurt</footer>
+
+    <script>
+        function playSound(type) {
+            const sounds = {
+                'click': document.getElementById('clickSound'),
+                'theme': document.getElementById('themeSound'),
+                'pop': document.getElementById('popSound'),
+                'notif': document.getElementById('notifSound')
+            };
+            if(sounds[type]) {
+                sounds[type].currentTime = 0;
+                sounds[type].play().catch(() => {});
+            }
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.transform = 'translateY(-100%)';
+                setTimeout(showNotification, 800);
+            }, 1800);
+        });
+
+        function showNotification() {
+            const notif = document.getElementById('status-notification');
+            const msg = document.getElementById('notif-msg');
+            const bar = document.getElementById('notif-bar');
+            
+            msg.innerHTML = "Hoş geldin! Yeni Restoran Simülasyonu yayında. 🍔🍳";
+
+            notif.classList.add('show');
+            playSound('notif');
+
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => { notif.classList.remove('show'); }, 500);
+                } else {
+                    width += 1;
+                    bar.style.width = width + '%';
+                }
+            }, 30);
+        }
+
+        function setTheme(theme) {
+            playSound('theme');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.getElementById('lightBtn').classList.toggle('active', theme === 'light');
+            document.getElementById('darkBtn').classList.toggle('active', theme === 'dark');
+        }
+
+        function playGame(url) {
+            playSound('pop');
+            const overlay = document.getElementById('celebration-overlay');
+            overlay.style.display = 'flex';
+            for (let i = 0; i < 40; i++) { createConfetti(); }
+            setTimeout(() => { window.location.href = url; }, 2500);
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.animationDuration = (Math.random() * 2 + 1) + 's';
+            document.body.appendChild(confetti);
+            setTimeout(() => { confetti.remove(); }, 3000);
+        }
+
+        const canvas = document.getElementById('particles-js');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function init() {
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            particles = [];
+            for(let i = 0; i < 80; i++) { particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, size: Math.random() * 2, speed: Math.random() * 0.5 }); }
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--particle-color');
+            particles.forEach(p => { p.y -= p.speed; if(p.y < 0) p.y = canvas.height; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill(); });
+            requestAnimationFrame(animate);
+        }
+        window.addEventListener('resize', init);
+        init(); animate();
+    </script>
+</body>
+</html>
