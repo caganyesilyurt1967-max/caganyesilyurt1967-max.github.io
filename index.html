@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Çağan Yeşilyurt</title>
-    <meta name="description" content="Çağan Yeşilyurt kişisel web sitesi. XOX, Restoran Simülasyonu ve Cagan Build gibi oyun projelerimi ve güncel çalışmalarımı buradan inceleyebilirsiniz.">
-    <meta name="keywords" content="Çağan Yeşilyurt, Çağan Yeşilyurt projeleri, XOX oyunu, Cagan Build, Restoran Simülasyonu, web geliştirici">
+    <title>Çağan Yeşilyurt | Projeler</title>
+    <meta name="description" content="Çağan Yeşilyurt kişisel web sitesi. XOX, Restoran Simülasyonu, Çağan Haber ve Cagan Build gibi projelerimi buradan inceleyebilirsiniz.">
+    <meta name="keywords" content="Çağan Yeşilyurt, Çağan Yeşilyurt projeleri, XOX oyunu, Cagan Build, Restoran Simülasyonu, Çağan Haber, futbol haberleri">
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="Çağan Yeşilyurt | Projeler">
-    <meta property="og:description" content="Modern oyunlar ve dijital projelerimi keşfedin.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://caganyesilyurt.com/">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -26,6 +21,7 @@
             --status-green: #00ff88;
             --insta-color: #E1306C;
             --update-bg: rgba(0, 212, 255, 0.15);
+            --danger-red: #ff4757;
         }
 
         [data-theme="light"] {
@@ -128,7 +124,7 @@
     </div>
 
     <div class="clouds"></div>
-    <div id="celebration-overlay"><div class="celebration-text">Çağan Yeşilyurt<br>İyi Oyunlar Diler! 🚀</div></div>
+    <div id="celebration-overlay"><div class="celebration-text">Çağan Yeşilyurt<br>Keyifli Vakitler Diler! 🚀</div></div>
 
     <div class="theme-switch">
         <button class="theme-btn" id="lightBtn" onclick="setTheme('light')">☀️</button>
@@ -142,6 +138,30 @@
     </header>
 
     <div class="container">
+        <div class="card" style="border: 2px solid var(--danger-red);">
+            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
+            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);">
+                <i class="fas fa-bolt"></i> Yeni Proje: 24 Ocak 2026
+            </div>
+            <div>
+                <h2>Çağan Haber</h2>
+                <p>En hızlı ve güvenilir güncel futbol haberleri.</p>
+                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt.com/Cagan-haber/')" class="btn" style="background: var(--danger-red);">Haberlere Git</button>
+        </div>
+
+        <div class="card" style="border: 2px solid var(--danger-red);">
+            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
+            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);"><i class="fas fa-star"></i> Yeni Proje: 23 Ocak 2026</div>
+            <div>
+                <h2>Restoran Simülasyonu</h2>
+                <p>Kendi restoranını yönet ve geliştir!</p>
+                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="btn" style="background: var(--danger-red);">Restoranı Yönet</button>
+        </div>
+
         <div class="card">
             <div class="site-status">AKTİF <div class="status-dot"></div></div>
             <div class="update-tag"><i class="fas fa-history"></i> Son Güncelleme: 28 Aralık 2025</div>
@@ -162,17 +182,6 @@
                 <span class="device-info info-pc"><i class="fas fa-desktop"></i> Sadece bilgisayar ile uyumludur.</span>
             </div>
             <button onclick="playGame('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="btn">Oyuna Başla</button>
-        </div>
-
-        <div class="card" style="border: 2px solid var(--accent-color);">
-            <div class="site-status">YENİ <div class="status-dot"></div></div>
-            <div class="update-tag" style="background: rgba(0, 255, 136, 0.1);"><i class="fas fa-star"></i> Yeni Proje: 23 Ocak 2026</div>
-            <div>
-                <h2>Restoran Simülasyonu</h2>
-                <p>Kendi restoranını yönet ve geliştir!</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
-            </div>
-            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="btn">Restoranı Yönet</button>
         </div>
 
         <div class="card">
@@ -221,7 +230,7 @@
             const msg = document.getElementById('notif-msg');
             const bar = document.getElementById('notif-bar');
             
-            msg.innerHTML = "Hoş geldin! Yeni Restoran Simülasyonu yayında. 🍔🍳";
+            msg.innerHTML = "Sistem Güncellendi! Futbol haberleri ve Restoran oyunu yayında. ⚽🍔";
 
             notif.classList.add('show');
             playSound('notif');
