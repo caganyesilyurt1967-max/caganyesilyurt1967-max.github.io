@@ -7,7 +7,7 @@
     <title>Çağan Yeşilyurt</title>
 
     <meta name="description" content="Çağan Yeşilyurt. Adam Asmaca, Restoran Simülasyonu, Çağan Haber, XOX ve Cagan Build uygulamalarını keşfedin.">
-    <meta name="keywords" content="Çağan Yeşilyurt, Adam Asmaca, Restoran Simülasyonu, Çağan Haber, futbol haberleri, XOX oyunu, Cagan Build, web geliştirici">
+    <meta name="keywords" content="Çağan Yeşilyurt, Adam Asmaca, Restoran Simülasyonu, Çağan Haber, futbol haberleri, XOX oyunu, Cagan Build, web geliştirici, Cyber Runner">
     
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="robots" content="index, follow">
@@ -70,7 +70,7 @@
         }
 
         .clouds { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0; transition: opacity 0.8s; }
-        [data-theme=\"light\"] .clouds { opacity: 1; }
+        [data-theme="light"] .clouds { opacity: 1; }
         .cloud { position: absolute; background: #fff; border-radius: 100px; opacity: 0.8; animation: moveClouds 25s linear infinite; }
 
         #celebration-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 11, 26, 0.9); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(10px); }
@@ -140,6 +140,19 @@
     </header>
 
     <div class="container">
+        <div class="card" style="border: 2px solid var(--danger-red);">
+            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
+            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);">
+                <i class="fas fa-running"></i> Yeni: 25 Ocak 2026
+            </div>
+            <div>
+                <h2>Cyber Runner</h2>
+                <p>Siber dünyada hız kesmeden koş, engelleri aş ve en yüksek skora ulaş!</p>
+                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            </div>
+            <button onclick="playGame('https://caganyesilyurt.com/CyberRunner/')" class="btn" style="background: var(--danger-red);">Koşmaya Başla</button>
+        </div>
+
         <div class="card" style="border: 2px solid var(--danger-red);">
             <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
             <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);">
@@ -245,7 +258,7 @@
             const msg = document.getElementById('notif-msg');
             const bar = document.getElementById('notif-bar');
             
-            msg.innerHTML = "Sistem Güncellendi! Futbol haberleri, Restoran ve Adam Asmaca yayında. ⚽🍔🎮";
+            msg.innerHTML = "Sistem Güncellendi! Cyber Runner, Futbol haberleri ve Adam Asmaca yayında. 🏃‍♂️⚽🎮";
 
             notif.classList.add('show');
             playSound('notif');
