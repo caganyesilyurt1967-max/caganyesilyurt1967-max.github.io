@@ -2,7 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://caganyesilyurt.com/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-01-28</lastmod>
     <priority>1.00</priority>
   </url>
+  <url>
+    <loc>https://caganyesilyurt.com/CyberRunner/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://caganyesilyurt.com/AdamAsmaca/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://caganyesilyurt.com/Cagan-haber/</loc>
+    <lastmod>2026-01-24</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://caganyesilyurt.com/cagan-build/</loc>
+    <lastmod>2025-11-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://caganyesilyurt.com/restaurant-sim-lasyon/</loc>
+    <lastmod>2026-01-23</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://caganyesilyurt.com/Cagan-Yemek-Tarifleri-/</loc>
+    <lastmod>2025-10-05</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://caganyesilyurt.com/xox-oyunu-projesi/</loc>
+    <lastmod>2025-12-28</lastmod>
+    <priority>0.60</priority>
+  </url>
 </urlset>
+
