@@ -10,6 +10,8 @@
     <meta name="keywords" content="Çağan Yeşilyurt, Cyber Runner oyna, Cagan Build oyna, ücretsiz online oyunlar, 2026 oyun projeleri, yerli oyun geliştirici, tarayıcı tabanlı oyunlar, Adam Asmaca, Çağan Haber">
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0ea5e9">
+    <link rel="canonical" href="https://caganyesilyurt.com" />
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Çağan Yeşilyurt V3 | Dijital Gelecek Burada Başlıyor">
@@ -21,10 +23,30 @@
     <meta name="twitter:title" content="Çağan Yeşilyurt V3 | Oyun ve Teknoloji Portalı">
     <meta name="twitter:image" content="https://i.ibb.co/bgM6pB5P/image.png">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Çağan Yeşilyurt Oyun Portalı",
+      "operatingSystem": "Web",
+      "applicationCategory": "GameApplication",
+      "browserRequirements": "HTML5 destekleyen tüm tarayıcılar",
+      "author": {
+        "@type": "Person",
+        "name": "Çağan Yeşilyurt"
+      },
+      "description": "Cyber Runner, Cagan Build, Restoran Simülasyonu gibi ücretsiz tarayıcı oyunları platformu.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
-        /* TASARIM VE BOYUTLANDIRMA SİSTEMİ */
         :root {
             --arka-plan-koyu: #020617; --arka-plan-acik: #f8fafc;
             --kart-koyu: rgba(15, 23, 42, 0.95); --kart-acik: #ffffff;
@@ -43,7 +65,6 @@
 
         body.isik-modu { background-color: var(--arka-plan-acik); color: var(--yazi-acik); }
 
-        /* GİRİŞ EKRANI */
         #giris-ekrani {
             position: fixed; inset: 0; background: #020617; z-index: 10000;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -55,17 +76,14 @@
         .cubuk-dis { width: 300px; height: 4px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; position: relative; }
         .cubuk-ic { width: 0%; height: 100%; background: linear-gradient(90deg, var(--vurgu-rengi), var(--basari-yesili)); box-shadow: 0 0 20px var(--vurgu-isik); }
 
-        /* LOGO VE NAVİGASYON */
         .ust-menu { position: fixed; top: 0; width: 100%; padding: 15px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(2,6,23,0.7); backdrop-filter: blur(20px); z-index: 1000; box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .logo-alani { display: flex; align-items: center; gap: 15px; font-weight: 900; font-size: 1.8rem; letter-spacing: -1.5px; }
         .logo-resim { width: 45px; height: 45px; border-radius: 12px; border: 2px solid var(--vurgu-rengi); object-fit: cover; }
 
-        /* ANA BAŞLIK */
         header { padding: 160px 20px 80px; text-align: center; }
         h1 { font-size: 4.5rem; margin: 0; background: linear-gradient(135deg, #fff 0%, #64748b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .canli-panel { display: inline-flex; align-items: center; gap: 10px; background: rgba(14, 165, 233, 0.1); padding: 10px 25px; border-radius: 100px; border: 1px solid var(--vurgu-rengi); color: var(--vurgu-rengi); font-weight: 700; margin-bottom: 25px; }
 
-        /* KART SİSTEMİ */
         .ana-konteyner { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 40px; max-width: 1500px; margin: 0 auto; }
         .kart {
             background: var(--kart-koyu); border: 1px solid rgba(255,255,255,0.05); border-radius: 35px;
@@ -127,7 +145,7 @@
 
     <nav class="ust-menu">
         <div class="logo-alani">
-            <img src="https://i.ibb.co/bgM6pB5P/image.png" alt="Logo" class="logo-resim">
+            <img src="https://i.ibb.co/bgM6pB5P/image.png" alt="Çağan Yeşilyurt Logo" class="logo-resim" loading="lazy">
             <span>CAGAN<span style="color:var(--vurgu-rengi)">V3</span></span>
         </div>
         <div style="cursor: pointer; font-size: 1.4rem; color: var(--vurgu-rengi);" onclick="temaDegistir()">
@@ -144,6 +162,16 @@
     </header>
 
     <main class="ana-konteyner">
+        <article class="kart yeni-proje">
+            <div class="kart-ust">
+                <span class="tarih-etiketi">09 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
+            </div>
+            <h2>Restoran Simülasyonu</h2>
+            <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüterek bir imparatorluk kur.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="buton">YÖNETMEYE BAŞLA</button>
+        </article>
+
         <article class="kart yeni-proje">
             <div class="kart-ust">
                 <span class="tarih-etiketi">29 OCAK 2026</span>
@@ -174,21 +202,13 @@
             <button onclick="projeyiBaslat('https://caganyesilyurt.com/Cagan-haber/')" class="buton">HABERLERİ OKU</button>
         </article>
 
-        <article class="kart yeni-proje">
+        <article class="kart">
             <div class="kart-ust">
-                <span class="tarih-etiketi">26 OCAK 2026</span>
-                <span class="yeni-etiketi">YENİ</span>
+                <span class="tarih-etiketi">28 ARALIK 2025</span>
             </div>
             <h2>Cagan Build</h2>
             <p>Yaratıcılığını konuştur! Kendi yapılarını inşa et, blokları yerleştir ve hayalindeki dünyayı 3 boyutlu olarak tasarla.</p>
             <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="buton">İNŞA ET</button>
-        </article>
-
-        <article class="kart">
-            <div class="kart-ust"><span class="tarih-etiketi">15 ARALIK 2025</span></div>
-            <h2>Restoran Simülasyonu</h2>
-            <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüterek bir imparatorluk kur.</p>
-            <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="buton">YÖNETMEYE BAŞLA</button>
         </article>
 
         <article class="kart">
@@ -229,7 +249,7 @@
 
     <footer>
         <div style="margin-bottom: 40px;">
-            <a href="https://instagram.com/cagan196761" target="_blank" style="color:white; font-size: 3rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://instagram.com/cagan196761" target="_blank" style="color:white; font-size: 3rem;" aria-label="Instagram'da takip et"><i class="fab fa-instagram"></i></a>
         </div>
         <p style="font-weight: 900; font-size: 1.4rem; letter-spacing: 2px;">ÇAĞAN YEŞİLYURT  &copy; 2026</p>
         <p class="telif-hakki">
@@ -281,8 +301,10 @@
         // CANLI OYUNCU SİMÜLASYONU
         setInterval(() => {
             const sayac = document.getElementById('oyuncu-sayisi');
-            let deger = parseInt(sayac.innerText.replace(',', ''));
-            sayac.innerText = (deger + Math.floor(Math.random() * 21 - 10)).toLocaleString();
+            if(sayac) {
+                let deger = parseInt(sayac.innerText.replace(',', ''));
+                sayac.innerText = (deger + Math.floor(Math.random() * 21 - 10)).toLocaleString();
+            }
         }, 4000);
 
         // SAĞ TIK ENGELİ
