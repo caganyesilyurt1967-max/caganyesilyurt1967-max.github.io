@@ -4,361 +4,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Çağan Yeşilyurt | Ücretsiz Online Oyunlar</title>
+    <title>Çağan Yeşilyurt V3 | Ücretsiz Online Oyunlar & Dijital Eğlence</title>
 
-    <meta name="description" content="Çağan Yeşilyurt'un eğlence dünyası. Cyber Runner, Adam Asmaca, Cagan Build ve daha fazlası. Hemen ücretsiz oyna!">
-    <meta name="keywords" content="Çağan Yeşilyurt, ücretsiz online oyunlar, Adam Asmaca oyna, Cyber Runner, Cagan Build, oyun sitesi">
+    <meta name="description" content="Çağan Yeşilyurt V3: Cyber Runner, Cagan Build ve Adam Asmaca gibi popüler oyunları ücretsiz oynayın. 2026 model eğlence ve teknoloji portalına hemen katılın!">
+    <meta name="keywords" content="Çağan Yeşilyurt, Cyber Runner oyna, Cagan Build indir, ücretsiz online oyunlar, 2026 oyun projeleri, yerli oyun geliştirici, tarayıcı tabanlı oyunlar, Adam Asmaca">
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="robots" content="index, follow">
 
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Çağan Yeşilyurt",
-        "url": "https://caganyesilyurt.com/",
-        "publisher": {
-          "@type": "Person",
-          "name": "Çağan Yeşilyurt"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Cyber Runner",
-            "url": "https://caganyesilyurt.com/CyberRunner/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Adam Asmaca",
-            "url": "https://caganyesilyurt.com/AdamAsmaca/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Çağan Haber",
-            "url": "https://caganyesilyurt.com/Cagan-haber/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Cagan Build",
-            "url": "https://caganyesilyurt1967-max.github.io/cagan-build/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "Restoran Simülasyonu",
-            "url": "https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Yemek Tarifleri",
-            "url": "https://caganyesilyurt1967-max.github.io/Cagan-Yemek-Tarifleri-/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 7,
-            "name": "XOX Oyunu",
-            "url": "https://caganyesilyurt1967-max.github.io/xox-oyunu-projesi/"
-          }
-        ]
-      }
-    ]
-    </script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Çağan Yeşilyurt V3 | Dijital Gelecek Burada Başlıyor">
+    <meta property="og:description" content="Ücretsiz oyunlar, inşa simülasyonları ve anlık spor haberleri. 2026'nın en yenilikçi portalını keşfet.">
+    <meta property="og:image" content="https://i.ibb.co/bgM6pB5P/image.png">
+    <meta property="og:url" content="https://caganyesilyurt.com">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Çağan Yeşilyurt V3 | Oyun ve Teknoloji Portalı">
+    <meta name="twitter:image" content="https://i.ibb.co/bgM6pB5P/image.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
+        /* TASARIM VE BOYUTLANDIRMA SİSTEMİ */
         :root {
-            --bg-color: #050b1a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-color: #00d4ff;
-            --text-color: #ffffff;
-            --particle-color: #ffffff;
-            --status-green: #00ff88;
-            --insta-color: #E1306C;
-            --update-bg: rgba(0, 212, 255, 0.15);
-            --danger-red: #ff4757;
+            --arka-plan-koyu: #020617; --arka-plan-acik: #f8fafc;
+            --kart-koyu: rgba(15, 23, 42, 0.95); --kart-acik: #ffffff;
+            --vurgu-rengi: #0ea5e9; --vurgu-isik: rgba(14, 165, 233, 0.4);
+            --tehlike-kirmizi: #ff4757; --kirmizi-isik: rgba(255, 71, 87, 0.4);
+            --yazi-koyu: #f1f5f9; --yazi-acik: #0f172a;
+            --basari-yesili: #10b981;
         }
-
-        [data-theme="light"] {
-            --bg-color: #87CEEB;
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --accent-color: #0077b6;
-            --text-color: #1e293b;
-            --particle-color: transparent;
-            --status-green: #00ad5d;
-            --update-bg: rgba(0, 119, 182, 0.1);
-        }
-
-        /* PRELOADER */
-        #preloader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #050b1a; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; z-index: 3000;
-            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-        .loader-text { color: var(--accent-color); font-family: monospace; font-size: 1.2rem; margin-bottom: 20px; letter-spacing: 3px; }
-        .loader-bar-container { width: 250px; height: 4px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; }
-        .loader-bar { width: 0%; height: 100%; background: var(--accent-color); animation: loadProgress 1.5s ease-in-out forwards; }
-        @keyframes loadProgress { 0% { width: 0%; } 100% { width: 100%; } }
-
-        /* BİLDİRİM */
-        #status-notification {
-            position: fixed; top: -120px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 500px; background: var(--card-bg);
-            backdrop-filter: blur(15px); border: 1px solid var(--accent-color);
-            border-radius: 15px; padding: 15px; z-index: 2500;
-            transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
-        }
-        #status-notification.show { top: 20px; }
-        .notif-text { font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
-        .notif-progress-container { width: 100%; height: 3px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; }
-        .notif-progress-bar { width: 0%; height: 100%; background: var(--accent-color); }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-color); color: var(--text-color);
-            margin: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh;
-            transition: background-color 0.8s ease;
+            margin: 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--arka-plan-koyu); color: var(--yazi-koyu);
+            transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); overflow-x: hidden;
+            -webkit-user-select: none; user-select: none;
         }
 
-        .clouds { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0; transition: opacity 0.8s; }
-        [data-theme="light"] .clouds { opacity: 1; }
+        body.isik-modu { background-color: var(--arka-plan-acik); color: var(--yazi-acik); }
 
-        #celebration-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 11, 26, 0.9); display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(10px); }
-        .celebration-text { font-size: 2.5rem; color: var(--accent-color); text-align: center; font-weight: bold; }
-        .confetti { position: absolute; width: 10px; height: 10px; animation: confettiFall 3s linear forwards; }
-        @keyframes confettiFall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+        /* GİRİŞ EKRANI */
+        #giris-ekrani {
+            position: fixed; inset: 0; background: #020617; z-index: 10000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+        .yukleme-icerik { text-align: center; }
+        .yukleme-baslik { font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 10px; letter-spacing: -1px; }
+        .yukleme-surum { color: var(--vurgu-rengi); font-weight: bold; letter-spacing: 5px; margin-bottom: 30px; }
+        .cubuk-dis { width: 300px; height: 4px; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; position: relative; }
+        .cubuk-ic { width: 0%; height: 100%; background: linear-gradient(90deg, var(--vurgu-rengi), var(--basari-yesili)); box-shadow: 0 0 20px var(--vurgu-isik); }
 
-        .theme-switch { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100; background: rgba(0, 0, 0, 0.2); padding: 5px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .theme-btn { background: none; border: none; cursor: pointer; font-size: 20px; padding: 8px 12px; border-radius: 50%; opacity: 0.5; transition: 0.3s; }
-        .theme-btn.active { opacity: 1; background: var(--accent-color); color: white; box-shadow: 0 0 15px var(--accent-color); }
+        /* LOGO VE NAVİGASYON */
+        .ust-menu { position: fixed; top: 0; width: 100%; padding: 15px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(2,6,23,0.7); backdrop-filter: blur(20px); z-index: 1000; box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo-alani { display: flex; align-items: center; gap: 15px; font-weight: 900; font-size: 1.8rem; letter-spacing: -1.5px; }
+        .logo-resim { width: 45px; height: 45px; border-radius: 12px; border: 2px solid var(--vurgu-rengi); object-fit: cover; }
 
-        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        header { text-align: center; padding: 80px 20px; }
-        h1 { font-size: 3.8rem; color: var(--accent-color); text-shadow: 0 0 30px rgba(0, 212, 255, 0.4); margin: 0; }
+        /* ANA BAŞLIK */
+        header { padding: 160px 20px 80px; text-align: center; }
+        h1 { font-size: 4.5rem; margin: 0; background: linear-gradient(135deg, #fff 0%, #64748b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .canli-panel { display: inline-flex; align-items: center; gap: 10px; background: rgba(14, 165, 233, 0.1); padding: 10px 25px; border-radius: 100px; border: 1px solid var(--vurgu-rengi); color: var(--vurgu-rengi); font-weight: 700; margin-bottom: 25px; }
 
-        .container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; padding: 20px; max-width: 1200px; }
-        .card { background: var(--card-bg); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 320px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-        .card:hover { transform: translateY(-10px); border-color: var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        /* KART SİSTEMİ */
+        .ana-konteyner { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 40px; max-width: 1500px; margin: 0 auto; }
+        .kart {
+            background: var(--kart-koyu); border: 1px solid rgba(255,255,255,0.05); border-radius: 35px;
+            padding: 40px; transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1); position: relative;
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        .isik-modu .kart { background: var(--kart-acik); border-color: rgba(0,0,0,0.05); color: var(--yazi-acik); }
+        .kart.yeni-proje { border: 2.5px solid var(--tehlike-kirmizi); box-shadow: 0 10px 40px var(--kirmizi-isik); }
+        .kart:hover { transform: translateY(-15px); border-color: var(--vurgu-rengi); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.6); }
 
-        .site-status { display: flex; align-items: center; justify-content: flex-end; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; }
-        .status-dot { width: 8px; height: 8px; background-color: var(--status-green); border-radius: 50%; margin-left: 8px; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+        .kart-ust { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .tarih-etiketi { font-size: 0.8rem; font-weight: 800; opacity: 0.5; font-family: monospace; }
+        .yeni-etiketi { background: var(--tehlike-kirmizi); color: white; padding: 5px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; }
 
-        .update-tag { background: var(--update-bg); color: var(--accent-color); font-size: 0.7rem; padding: 5px 10px; border-radius: 5px; margin-bottom: 15px; display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(0, 212, 255, 0.2); }
-        .device-info { font-size: 0.85rem; font-weight: bold; margin-top: 10px; display: block; }
-        .info-all { color: var(--status-green); }
-        .info-pc { color: #ffcc00; }
+        .kart h2 { font-size: 2rem; margin: 0 0 15px; letter-spacing: -1px; }
+        .kart p { font-size: 1rem; line-height: 1.7; opacity: 0.7; margin-bottom: 30px; flex-grow: 1; }
 
-        .btn { display: block; background: var(--accent-color); color: #fff; text-decoration: none; padding: 14px; border-radius: 10px; font-weight: bold; text-align: center; margin-top: 15px; cursor: pointer; border: none; width: 100%; transition: 0.3s; }
-        .btn:hover { background: #fff; color: #000; }
-        .insta-footer { margin: 60px 0; text-align: center; }
-        .insta-btn { display: inline-flex; align-items: center; gap: 12px; background: transparent; color: #fff; text-decoration: none; padding: 12px 25px; border-radius: 50px; border: 2px solid var(--insta-color); font-weight: bold; transition: 0.4s; }
-        .insta-btn:hover { background: var(--insta-color); box-shadow: 0 0 25px var(--insta-color); transform: scale(1.05); }
+        .buton {
+            background: var(--vurgu-rengi); color: white; padding: 18px; border-radius: 18px;
+            text-decoration: none; font-weight: 800; text-align: center; transition: 0.3s;
+            border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 12px;
+        }
+        .kart.yeni-proje .buton { background: var(--tehlike-kirmizi); }
+        .buton:hover { filter: brightness(1.2); letter-spacing: 1px; }
 
-        footer { padding: 30px; opacity: 0.4; font-size: 0.8rem; text-align: center; }
+        #gecis-ekrani {
+            position: fixed; inset: 0; background: #020617; z-index: 10001;
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+        }
+
+        .sss-bolumu { max-width: 1100px; margin: 100px auto; padding: 0 20px; }
+        .sss-kapsayici { background: rgba(255,255,255,0.02); padding: 50px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.05); }
+        .sss-soru-cevap { margin-top: 40px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px; margin-bottom: 25px; }
+        .sss-soru-cevap:last-child { border: none; }
+        .sss-soru-cevap h4 { color: var(--vurgu-rengi); font-size: 1.3rem; margin-bottom: 10px; }
+        .sss-soru-cevap p { line-height: 1.8; opacity: 0.7; }
+
+        footer { padding: 100px 20px; background: #010409; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .telif-hakki { margin-top: 40px; opacity: 0.4; font-size: 0.8rem; letter-spacing: 1px; }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
-    <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
-    <audio id="themeSound" src="https://www.soundjay.com/buttons/sounds/button-30.mp3"></audio>
-    <audio id="popSound" src="https://www.soundjay.com/misc/sounds/magic-chime-01.mp3"></audio>
-    <audio id="notifSound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"></audio>
+    <audio id="tiklama-sesi" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
-    <div id="preloader">
-        <div class="loader-text">SİSTEM BAŞLATILIYOR...</div>
-        <div class="loader-bar-container"><div class="loader-bar"></div></div>
+    <div id="giris-ekrani">
+        <div class="yukleme-icerik">
+            <div class="yukleme-baslik">Çağan Yeşilyurt</div>
+            <div class="yukleme-surum">SÜRÜM 3.0 ALTIN</div>
+            <div class="cubuk-dis"><div id="yukleme-bari" class="cubuk-ic"></div></div>
+        </div>
     </div>
 
-    <div id="status-notification">
-        <div class="notif-text" id="notif-msg">Yükleniyor...</div>
-        <div class="notif-progress-container"><div class="notif-progress-bar" id="notif-bar"></div></div>
+    <div id="gecis-ekrani">
+        <div style="font-size: 5rem; color: var(--tehlike-kirmizi);"><i class="fas fa-microchip fa-spin"></i></div>
+        <h2 style="color:white; font-size: 2.2rem; margin-top:30px; font-weight: 900;">PROJE AÇILIYOR</h2>
+        <p style="color:var(--vurgu-rengi); font-weight: bold; opacity: 0.6;">SİSTEM VARLIKLARI YÜKLENİYOR...</p>
     </div>
 
-    <div class="clouds"></div>
-    <div id="celebration-overlay"><div class="celebration-text">Çağan Yeşilyurt<br>Yönlendiriliyor... 🚀</div></div>
-
-    <div class="theme-switch">
-        <button class="theme-btn" id="lightBtn" onclick="setTheme('light')">☀️</button>
-        <button class="theme-btn active" id="darkBtn" onclick="setTheme('dark')">🌙</button>
-    </div>
-
-    <canvas id="particles-js"></canvas>
+    <nav class="ust-menu">
+        <div class="logo-alani">
+            <img src="https://i.ibb.co/bgM6pB5P/image.png" alt="Logo" class="logo-resim">
+            <span>CAGAN<span style="color:var(--vurgu-rengi)">V3</span></span>
+        </div>
+        <div style="cursor: pointer; font-size: 1.4rem; color: var(--vurgu-rengi);" onclick="temaDegistir()">
+            <i class="fas fa-circle-half-stroke" id="tema-ikonu"></i>
+        </div>
+    </nav>
 
     <header>
-        <h1>Çağan Yeşilyurt</h1>
-        <p style="color: var(--accent-color); font-weight: bold; margin-top: 10px;">Ücretsiz Online Oyunlar Platformu</p>
+        <div class="canli-panel"><i class="fas fa-users"></i> AKTİF OYUNCU: <span id="oyuncu-sayisi">12,450</span></div>
+        <h1>Dijital Gelecek<br>Burada Başlıyor</h1>
+        <p style="max-width: 600px; margin: 30px auto; opacity: 0.6; line-height: 1.8;">
+            Çağan Yeşilyurt tarafından tasarlanan 2026 model eğlence ve teknoloji ekosistemine hoş geldiniz. En yeni projelerimizi aşağıdan inceleyebilirsiniz.
+        </p>
     </header>
 
-    <div class="container">
-        <div class="card" style="border: 2px solid var(--danger-red);">
-            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
-            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);"><i class="fas fa-running"></i> Yeni: 25 Ocak 2026</div>
-            <div>
-                <h2>Cyber Runner</h2>
-                <p>Siber dünyada engelleri aş ve skoru patlat!</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+    <main class="ana-konteyner">
+        <article class="kart yeni-proje">
+            <div class="kart-ust">
+                <span class="tarih-etiketi">29 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
             </div>
-            <button onclick="playGame('https://caganyesilyurt.com/CyberRunner/')" class="btn" style="background: var(--danger-red);">Hemen Koş</button>
-        </div>
+            <h2>Cyber Runner</h2>
+            <p>Siber bir dünyada sonsuz bir hız deneyimi. Engellerden kaçın ve en yüksek skora ulaşmak için limitlerini zorla!</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt.com/CyberRunner/')" class="buton">HEMEN OYNA</button>
+        </article>
 
-        <div class="card" style="border: 2px solid var(--danger-red);">
-            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
-            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);"><i class="fas fa-ghost"></i> Yeni: 24 Ocak 2026</div>
-            <div>
-                <h2>Adam Asmaca</h2>
-                <p>Kelime dağarcığını Çağan Yeşilyurt farkıyla test et!</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+        <article class="kart yeni-proje">
+            <div class="kart-ust">
+                <span class="tarih-etiketi">28 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
             </div>
-            <button onclick="playGame('https://caganyesilyurt.com/AdamAsmaca/')" class="btn" style="background: var(--danger-red);">Kelimeyi Bul</button>
-        </div>
+            <h2>Adam Asmaca</h2>
+            <p>Kelime bilginizi test edin. Yenilenen kelime kütüphanesi ve zorlayıcı seviyelerle klasik eğlence modern yüzüyle burada.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt.com/AdamAsmaca/')" class="buton">HEMEN OYNA</button>
+        </article>
 
-        <div class="card" style="border: 2px solid var(--danger-red);">
-            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
-            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);"><i class="fas fa-bolt"></i> Yeni: 24 Ocak 2026</div>
-            <div>
-                <h2>Çağan Haber</h2>
-                <p>En hızlı futbol haberleri ve spor dünyasından sıcak gelişmeler.</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+        <article class="kart yeni-proje">
+            <div class="kart-ust">
+                <span class="tarih-etiketi">27 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
             </div>
-            <button onclick="playGame('https://caganyesilyurt.com/Cagan-haber/')" class="btn" style="background: var(--danger-red);">Haberleri Oku</button>
-        </div>
+            <h2>Çağan Haber</h2>
+            <p>Spor dünyasındaki tüm gelişmeleri anlık olarak takip edin. Transferler, analizler ve özel haberler tek bir noktada.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt.com/Cagan-haber/')" class="buton">HABERLERİ OKU</button>
+        </article>
 
-        <div class="card">
-            <div class="site-status">AKTİF <div class="status-dot"></div></div>
-            <div class="update-tag"><i class="fas fa-history"></i> Son Güncelleme: 14 Kasım 2025</div>
-            <div>
-                <h2>Cagan Build</h2>
-                <p>Hayal gücünü sınırlama, 3D dünyanı inşa et.</p>
-                <span class="device-info info-pc"><i class="fas fa-desktop"></i> Sadece PC uyumludur.</span>
+        <article class="kart yeni-proje">
+            <div class="kart-ust">
+                <span class="tarih-etiketi">26 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
             </div>
-            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="btn">İnşaya Başla</button>
-        </div>
+            <h2>Cagan Build</h2>
+            <p>Yaratıcılığını konuştur! Kendi yapılarını inşa et, blokları yerleştir ve hayalindeki dünyayı 3 boyutlu olarak tasarla.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="buton">İNŞA ET</button>
+        </article>
 
-        <div class="card" style="border: 2px solid var(--danger-red);">
-            <div class="site-status" style="color: var(--danger-red);">YENİ <div class="status-dot" style="background-color: var(--danger-red);"></div></div>
-            <div class="update-tag" style="background: rgba(255, 71, 87, 0.1); border-color: rgba(255, 71, 87, 0.2); color: var(--danger-red);"><i class="fas fa-star"></i> Yeni: 23 Ocak 2026</div>
-            <div>
-                <h2>Restoran Simülasyonu</h2>
-                <p>Kendi restoranını kur, yönet ve imparatorluğunu büyüt!</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+        <article class="kart">
+            <div class="kart-ust"><span class="tarih-etiketi">15 ARALIK 2025</span></div>
+            <h2>Restoran Sim</h2>
+            <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüterek bir imparatorluk kur.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="buton">YÖNETMEYE BAŞLA</button>
+        </article>
+
+        <article class="kart">
+            <div class="kart-ust"><span class="tarih-etiketi">02 KASIM 2025</span></div>
+            <h2>XOX Oyunu</h2>
+            <p>Strateji yap ve rakibini yen. İster bir arkadaşına karşı, ister akıllı yapay zekaya karşı klasik XOX keyfi.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/xox-oyunu-projesi/')" class="buton">MEYDAN OKU</button>
+        </article>
+
+        <article class="kart">
+            <div class="kart-ust"><span class="tarih-etiketi">10 EKİM 2025</span></div>
+            <h2>Yemek Tarifleri</h2>
+            <p>Mutfağın yıldızı olun. Çağan Yeşilyurt'un özel seçkisiyle hazırlanan en lezzetli ve pratik yemek tarifleri.</p>
+            <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/Cagan-Yemek-Tarifleri-/')" class="buton">TARİFLERİ GÖR</button>
+        </article>
+    </main>
+
+    <section class="sss-bolumu">
+        <div class="sss-kapsayici">
+            <h3 style="font-size: 2.2rem; color: #fff; margin-bottom: 30px; text-align: center;">Sıkça Sorulan Sorular</h3>
+            
+            <div class="sss-soru-cevap">
+                <h4>Çağan Yeşilyurt V3 Nedir?</h4>
+                <p>Çağan Yeşilyurt V3, modern web teknolojileri (HTML5, CSS3 ve JS) kullanılarak geliştirilmiş, oyun ve güncel bilgi paylaşımını tek bir çatı altında toplayan kapsamlı bir portal projesidir.</p>
             </div>
-            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="btn" style="background: var(--danger-red);">Yönetmeye Başla</button>
-        </div>
 
-        <div class="card">
-            <div class="site-status">AKTİF <div class="status-dot"></div></div>
-            <div class="update-tag"><i class="fas fa-utensils"></i> Son Güncelleme: 05 Ekim 2025</div>
-            <div>
-                <h2>Yemek Tarifleri</h2>
-                <p>Çağan Yeşilyurt'tan lezzet dolu, pratik ve özel yemek tarifleri.</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            <div class="sss-soru-cevap">
+                <h4>Oyunlar Ücretsiz mi?</h4>
+                <p>Evet, platformumuzda yer alan Cyber Runner, Adam Asmaca ve Cagan Build dahil olmak üzere tüm projeler tamamen ücretsizdir.</p>
             </div>
-            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/Cagan-Yemek-Tarifleri-/')" class="btn">Tariflere Bak</button>
-        </div>
 
-        <div class="card">
-            <div class="site-status">AKTİF <div class="status-dot"></div></div>
-            <div class="update-tag"><i class="fas fa-history"></i> Son Güncelleme: 28 Aralık 2025</div>
-            <div>
-                <h2>XOX Oyunu</h2>
-                <p>Arkadaşlarınla veya kendine karşı oyna. Klasik ama modern!</p>
-                <span class="device-info info-all"><i class="fas fa-mobile-alt"></i> Tüm cihazlara uyumludur.</span>
+            <div class="sss-soru-cevap">
+                <h4>Platform Güvenli mi?</h4>
+                <p>Kesinlikle. Platformumuz kullanıcı verisi toplamaz. Tüm projeler tarayıcı tabanlı çalışır.</p>
             </div>
-            <button onclick="playGame('https://caganyesilyurt1967-max.github.io/xox-oyunu-projesi/')" class="btn">Hemen Oyna</button>
         </div>
-    </div>
+    </section>
 
-    <div class="insta-footer">
-        <a href="https://www.instagram.com/cagan196761" target="_blank" class="insta-btn" onclick="playSound('click')">
-            <i class="fa-brands fa-instagram"></i> Çağan Yeşilyurt'u Takip Et
-        </a>
-    </div>
-
-    <footer>&copy; 2026 Çağan Yeşilyurt | Resmi Web Sitesi</footer>
+    <footer>
+        <div style="margin-bottom: 40px;">
+            <a href="https://instagram.com/cagan196761" target="_blank" style="color:white; font-size: 3rem;"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="font-weight: 900; font-size: 1.4rem; letter-spacing: 2px;">ÇAĞAN YEŞİLYURT GLOBAL &copy; 2026</p>
+        <p class="telif-hakki">
+            TÜM HAKLARI SAKLIDIR. BU SİTEDEKİ TASARIM VE KOD YAPISI ÇAĞAN YEŞİLYURT'A AİTTİR. <br>
+            SİSTEM KİMLİĞİ: CY-V3-PLATIN | LİSANS: ÖZEL
+        </p>
+    </footer>
 
     <script>
-        function playSound(type) {
-            const sounds = {
-                'click': document.getElementById('clickSound'),
-                'theme': document.getElementById('themeSound'),
-                'pop': document.getElementById('popSound'),
-                'notif': document.getElementById('notifSound')
-            };
-            if(sounds[type]) {
-                sounds[type].currentTime = 0;
-                sounds[type].play().catch(() => {});
-            }
-        }
-
+        // YÜKLEME EKRANI
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').style.transform = 'translateY(-100%)';
-                setTimeout(showNotification, 800);
-            }, 1800);
+            const bar = document.getElementById('yukleme-bari');
+            let ilerleme = 0;
+            const zamanlayici = setInterval(() => {
+                ilerleme += Math.random() * 10; 
+                if(ilerleme > 100) ilerleme = 100;
+                bar.style.width = ilerleme + '%';
+                
+                if(ilerleme >= 100) {
+                    clearInterval(zamanlayici);
+                    if(sessionStorage.getItem('cagan_v3_giris')) {
+                        document.getElementById('giris-ekrani').style.display = 'none';
+                    } else {
+                        setTimeout(() => {
+                            document.getElementById('giris-ekrani').style.transform = 'translateY(-100%)';
+                            sessionStorage.setItem('cagan_v3_giris', 'true');
+                        }, 600);
+                    }
+                }
+            }, 40);
         });
 
-        function showNotification() {
-            const notif = document.getElementById('status-notification');
-            const msg = document.getElementById('notif-msg');
-            const bar = document.getElementById('notif-bar');
-            msg.innerHTML = "Sistem Güncellendi! Cagan Build ve tüm oyunlar aktif. 🚀";
-            notif.classList.add('show');
-            playSound('notif');
-            let width = 0;
-            const interval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(interval);
-                    setTimeout(() => { notif.classList.remove('show'); }, 500);
-                } else {
-                    width += 1;
-                    bar.style.width = width + '%';
-                }
-            }, 30);
+        // TEMA DEĞİŞTİRİCİ
+        function temaDegistir() {
+            document.body.classList.toggle('isik-modu');
+            const ikon = document.getElementById('tema-ikonu');
+            ikon.className = document.body.classList.contains('isik-modu') ? 'fas fa-sun' : 'fas fa-circle-half-stroke';
+            document.getElementById('tiklama-sesi').play().catch(()=>{});
         }
 
-        function setTheme(theme) {
-            playSound('theme');
-            document.documentElement.setAttribute('data-theme', theme);
-            document.getElementById('lightBtn').classList.toggle('active', theme === 'light');
-            document.getElementById('darkBtn').classList.toggle('active', theme === 'dark');
+        // PROJE BAŞLATICI
+        function projeyiBaslat(link) {
+            document.getElementById('tiklama-sesi').play().catch(()=>{});
+            const ekran = document.getElementById('gecis-ekrani');
+            ekran.style.display = 'flex';
+            setTimeout(() => { window.location.href = link; }, 1800);
         }
 
-        function playGame(url) {
-            playSound('pop');
-            const overlay = document.getElementById('celebration-overlay');
-            overlay.style.display = 'flex';
-            setTimeout(() => { window.location.href = url; }, 2000);
-        }
+        // CANLI OYUNCU SİMÜLASYONU
+        setInterval(() => {
+            const sayac = document.getElementById('oyuncu-sayisi');
+            let deger = parseInt(sayac.innerText.replace(',', ''));
+            sayac.innerText = (deger + Math.floor(Math.random() * 21 - 10)).toLocaleString();
+        }, 4000);
 
-        const canvas = document.getElementById('particles-js');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        function init() {
-            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-            particles = [];
-            for(let i = 0; i < 80; i++) { particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, size: Math.random() * 2, speed: Math.random() * 0.5 }); }
-        }
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--particle-color');
-            particles.forEach(p => { p.y -= p.speed; if(p.y < 0) p.y = canvas.height; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill(); });
-            requestAnimationFrame(animate);
-        }
-        window.addEventListener('resize', init);
-        init(); animate();
+        // SAĞ TIK ENGELİ
+        document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
-    </html>
-    
+</html>
