@@ -10,6 +10,8 @@
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="theme-color" content="#0ea5e9">
 
+    <link rel="canonical" href="https://caganyesilyurt.com/" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
@@ -60,7 +62,6 @@
             padding: 40px; transition: 0.5s; position: relative; display: flex; flex-direction: column;
         }
 
-        /* YENİ YAZANLARIN KIRMIZI ÇERÇEVESİ */
         .kart.yeni-proje {
             border: 2px solid var(--tehlike-kirmizi) !important;
             box-shadow: 0 0 20px var(--kirmizi-isik);
@@ -233,13 +234,11 @@
     </footer>
 
     <script>
-        // Sayfa geçişlerinde beyaz ekranı önle
         window.addEventListener('pageshow', (event) => {
             const gecis = document.getElementById('gecis-ekrani');
             if (gecis) gecis.style.display = 'none';
         });
 
-        // Giriş animasyonu
         window.addEventListener('load', () => {
             const bar = document.getElementById('yukleme-bari');
             let ilerleme = 0;
@@ -256,14 +255,12 @@
             }, 50);
         });
 
-        // Proje Başlatıcı
         function projeyiBaslat(link) {
             document.getElementById('tiklama-sesi').play().catch(()=>{});
             document.getElementById('gecis-ekrani').style.display = 'flex';
             setTimeout(() => { window.location.href = link; }, 1500);
         }
 
-        // Paylaşma Fonksiyonu (Dahili Tarayıcı Paylaşımı)
         function paylas(baslik) {
             if (navigator.share) {
                 navigator.share({
@@ -299,4 +296,4 @@
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
-</html>
+    </html>
