@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Site Haritası linkini buraya ekleyerek botları yönlendiriyoruz
+Sitemap: https://caganyesilyurt.com/sitemap.xml
+
