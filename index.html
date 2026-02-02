@@ -73,6 +73,11 @@
         .tarih-etiketi { font-size: 0.8rem; font-weight: 800; opacity: 0.5; }
         .yeni-etiketi { background: var(--tehlike-kirmizi); color: white; padding: 5px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 900; }
 
+        /* Yeni Uyumluluk Yazısı Stilleri */
+        .uyumluluk-etiketi { font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 6px; }
+        .uyumlu-yesil { color: var(--basari-yesili); }
+        .uyumlu-kirmizi { color: var(--tehlike-kirmizi); }
+
         .buton-grubu { display: flex; gap: 10px; margin-top: auto; }
         .buton { background: var(--vurgu-rengi); color: white; padding: 18px; border-radius: 18px; text-decoration: none; font-weight: 800; text-align: center; border: none; cursor: pointer; flex-grow: 1; transition: 0.3s; }
         .kart.yeni-proje .buton { background: var(--tehlike-kirmizi); }
@@ -129,6 +134,7 @@
         <article class="kart yeni-proje">
             <div class="kart-ust"><span class="tarih-etiketi">09 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Restoran Simülasyonu</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüterek bir imparatorluk kur.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="buton">YÖNETMEYE BAŞLA</button>
@@ -139,6 +145,7 @@
         <article class="kart yeni-proje">
             <div class="kart-ust"><span class="tarih-etiketi">29 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Cyber Runner</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Siber bir dünyada sonsuz bir hız deneyimi. Engellerden kaçın ve limitlerini zorla!</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt.com/CyberRunner/')" class="buton">HEMEN OYNA</button>
@@ -149,6 +156,7 @@
         <article class="kart yeni-proje">
             <div class="kart-ust"><span class="tarih-etiketi">28 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Adam Asmaca</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Kelime bilginizi test edin. Yenilenen kütüphanesi ile modern bir klasik deneyimi.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt.com/AdamAsmaca/')" class="buton">HEMEN OYNA</button>
@@ -159,6 +167,7 @@
         <article class="kart yeni-proje">
             <div class="kart-ust"><span class="tarih-etiketi">27 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Çağan Haber</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Spor dünyasındaki tüm gelişmeleri anlık olarak takip edin. Özel analizler burada.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt.com/Cagan-haber/')" class="buton">HABERLERİ OKU</button>
@@ -169,6 +178,7 @@
         <article class="kart">
             <div class="kart-ust"><span class="tarih-etiketi">28 ARALIK 2025</span></div>
             <h2>Cagan Build</h2>
+            <div class="uyumluluk-etiketi uyumlu-kirmizi"><i class="fas fa-desktop"></i> Sadece bilgisayar ile uyumludur</div>
             <p>Yaratıcılığını konuştur! Kendi yapılarını 3 boyutlu olarak tasarla ve inşa et.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="buton">İNŞA ET</button>
@@ -179,6 +189,7 @@
         <article class="kart">
             <div class="kart-ust"><span class="tarih-etiketi">02 KASIM 2025</span></div>
             <h2>XOX Oyunu</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Strateji yap ve rakibini yen. İster arkadaşına, ister yapay zekaya karşı.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/xox-oyunu-projesi/')" class="buton">MEYDAN OKU</button>
@@ -189,6 +200,7 @@
         <article class="kart">
             <div class="kart-ust"><span class="tarih-etiketi">10 EKİM 2025</span></div>
             <h2>Yemek Tarifleri</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Mutfağın yıldızı olun. Çağan Yeşilyurt'un özel seçkisiyle en lezzetli tarifler.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/Cagan-Yemek-Tarifleri-/')" class="buton">TARİFLERİ GÖR</button>
@@ -289,23 +301,17 @@
             ikon.className = document.body.classList.contains('isik-modu') ? 'fas fa-sun' : 'fas fa-circle-half-stroke';
         }
 
-        // Aktif oyuncu sayısını stabilize eden ve 50 ile sınırlayan mantık
         setInterval(() => {
             const sayac = document.getElementById('oyuncu-sayisi');
             if(sayac) {
                 let suankiDeger = parseInt(sayac.innerText.replace(/,/g, ''));
-                
-                // Ani artış/çıkış olmaması için değişim -2 ile +2 arası
                 let degisim = Math.floor(Math.random() * 5 - 2); 
                 let yeniDeger = suankiDeger + degisim;
-                
-                // Sınırlandırmalar (0-50 arası)
                 if(yeniDeger < 0) yeniDeger = 0;
                 if(yeniDeger > 50) yeniDeger = 50;
-                
                 sayac.innerText = yeniDeger.toString();
             }
-        }, 300000); // 5 dakikada bir güncelleme
+        }, 300000);
 
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
