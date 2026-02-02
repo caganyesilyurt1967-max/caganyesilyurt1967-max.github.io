@@ -33,7 +33,6 @@
 
         body.isik-modu { background-color: var(--arka-plan-acik); color: var(--yazi-acik); }
 
-        /* GİRİŞ EKRANI */
         #giris-ekrani {
             position: fixed; inset: 0; background: #020617; z-index: 10000;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -119,7 +118,7 @@
     </nav>
 
     <header>
-        <div class="canli-panel"><i class="fas fa-users"></i> AKTİF OYUNCU: <span id="oyuncu-sayisi">12,450</span></div>
+        <div class="canli-panel"><i class="fas fa-users"></i> AKTİF OYUNCU: <span id="oyuncu-sayisi">42</span></div>
         <h1>Dijital Gelecek<br>Burada Başlıyor</h1>
         <p style="max-width: 600px; margin: 30px auto; opacity: 0.6; line-height: 1.8;">
             Çağan Yeşilyurt tarafından tasarlanan 2026 model eğlence ve teknoloji ekosistemine hoş geldiniz.
@@ -259,7 +258,7 @@
 
         function projeyiBaslat(link) {
             const ses = document.getElementById('tiklama-sesi');
-            ses.currentTime = 0; // Başa sar
+            ses.currentTime = 0;
             ses.play().catch(e => console.log("Ses oynatılamadı:", e));
             
             document.getElementById('gecis-ekrani').style.display = 'flex';
@@ -290,13 +289,23 @@
             ikon.className = document.body.classList.contains('isik-modu') ? 'fas fa-sun' : 'fas fa-circle-half-stroke';
         }
 
+        // Aktif oyuncu sayısını stabilize eden ve 50 ile sınırlayan mantık
         setInterval(() => {
             const sayac = document.getElementById('oyuncu-sayisi');
             if(sayac) {
-                let deger = parseInt(sayac.innerText.replace(',', ''));
-                sayac.innerText = (deger + Math.floor(Math.random() * 21 - 10)).toLocaleString();
+                let suankiDeger = parseInt(sayac.innerText.replace(/,/g, ''));
+                
+                // Ani artış/çıkış olmaması için değişim -2 ile +2 arası
+                let degisim = Math.floor(Math.random() * 5 - 2); 
+                let yeniDeger = suankiDeger + degisim;
+                
+                // Sınırlandırmalar (0-50 arası)
+                if(yeniDeger < 0) yeniDeger = 0;
+                if(yeniDeger > 50) yeniDeger = 50;
+                
+                sayac.innerText = yeniDeger.toString();
             }
-        }, 4000);
+        }, 300000); // 5 dakikada bir güncelleme
 
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
