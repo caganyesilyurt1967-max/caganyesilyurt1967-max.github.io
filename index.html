@@ -93,7 +93,9 @@
 </head>
 <body oncontextmenu="return false;">
 
-    <audio id="tiklama-sesi" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+    <audio id="tiklama-sesi" preload="auto">
+        <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+    </audio>
 
     <div id="giris-ekrani">
         <div class="yukleme-baslik">Çağan Yeşilyurt</div>
@@ -256,7 +258,10 @@
         });
 
         function projeyiBaslat(link) {
-            document.getElementById('tiklama-sesi').play().catch(()=>{});
+            const ses = document.getElementById('tiklama-sesi');
+            ses.currentTime = 0; // Başa sar
+            ses.play().catch(e => console.log("Ses oynatılamadı:", e));
+            
             document.getElementById('gecis-ekrani').style.display = 'flex';
             setTimeout(() => { window.location.href = link; }, 1500);
         }
@@ -295,5 +300,5 @@
 
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
-</body>
-    </html>
+</body>  
+</html>
