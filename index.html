@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Çağan Yeşilyurt V3 | Ücretsiz Online Oyunlar & Dijital Eğlence</title>
-    <meta name="description" content="Çağan Yeşilyurt V3: Cyber Runner, Cagan Build ve Adam Asmaca gibi popüler oyunları ücretsiz oynayın. 2026 model eğlence ve teknoloji portalına hemen katılın!">
-    <meta name="keywords" content="Çağan Yeşilyurt, Cyber Runner, Cagan Build, ücretsiz online oyunlar, 2026 oyun projeleri, yerli oyun geliştirici, Adam Asmaca, Çağan Haber">
+    <meta name="description" content="Çağan Yeşilyurt V3: Stack Game, Cyber Runner, Cagan Build ve Adam Asmaca gibi popüler oyunları ücretsiz oynayın. 2026 model eğlence ve teknoloji portalı!">
+    <meta name="keywords" content="Çağan Yeşilyurt, Stack Game, Cyber Runner, Cagan Build, ücretsiz online oyunlar, 2026 oyun projeleri, yerli oyun geliştirici, Adam Asmaca, Çağan Haber">
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="theme-color" content="#0ea5e9">
 
     <link rel="canonical" href="https://caganyesilyurt.com/" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
@@ -61,6 +60,7 @@
             padding: 40px; transition: 0.5s; position: relative; display: flex; flex-direction: column;
         }
 
+        /* Yeni/Vurgulu Proje Stili */
         .kart.yeni-proje {
             border: 2px solid var(--tehlike-kirmizi) !important;
             box-shadow: 0 0 20px var(--kirmizi-isik);
@@ -73,7 +73,6 @@
         .tarih-etiketi { font-size: 0.8rem; font-weight: 800; opacity: 0.5; }
         .yeni-etiketi { background: var(--tehlike-kirmizi); color: white; padding: 5px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 900; }
 
-        /* Yeni Uyumluluk Yazısı Stilleri */
         .uyumluluk-etiketi { font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 6px; }
         .uyumlu-yesil { color: var(--basari-yesili); }
         .uyumlu-kirmizi { color: var(--tehlike-kirmizi); }
@@ -93,6 +92,11 @@
 
         footer { padding: 80px 20px; background: #010409; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
         .telif-hakki { margin-top: 40px; opacity: 0.4; font-size: 0.8rem; line-height: 2; letter-spacing: 1px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .ust-menu { padding: 15px 25px; }
+        }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -132,9 +136,29 @@
 
     <main class="ana-konteyner">
         <article class="kart yeni-proje">
-            <div class="kart-ust"><span class="tarih-etiketi">09 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
+            <div class="kart-ust">
+                <span class="tarih-etiketi">07 ŞUBAT 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
+            </div>
+            <h2>Stack Game</h2>
+            <div class="uyumluluk-etiketi uyumlu-yesil">
+                <i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur
+            </div>
+            <p>Blokları üst üste dizerek gökyüzüne ulaş! En yüksek skoru yap ve dengeni koru. Hızlı ol ama dikkatli davran.</p>
+            <div class="buton-grubu">
+                <button onclick="projeyiBaslat('http://caganyesilyurt.com/Stack-Game/')" class="buton">İSTİFLEMEYE BAŞLA</button>
+                <button onclick="paylas('Stack Game')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </article>
+
+        <article class="kart">
+            <div class="kart-ust">
+                <span class="tarih-etiketi">09 OCAK 2026</span>
+            </div>
             <h2>Restoran Simülasyonu</h2>
-            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
+            <div class="uyumluluk-etiketi uyumlu-yesil">
+                <i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur
+            </div>
             <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüterek bir imparatorluk kur.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="buton">YÖNETMEYE BAŞLA</button>
@@ -143,7 +167,10 @@
         </article>
 
         <article class="kart yeni-proje">
-            <div class="kart-ust"><span class="tarih-etiketi">29 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
+            <div class="kart-ust">
+                <span class="tarih-etiketi">29 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
+            </div>
             <h2>Cyber Runner</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Siber bir dünyada sonsuz bir hız deneyimi. Engellerden kaçın ve limitlerini zorla!</p>
@@ -154,7 +181,10 @@
         </article>
 
         <article class="kart yeni-proje">
-            <div class="kart-ust"><span class="tarih-etiketi">28 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
+            <div class="kart-ust">
+                <span class="tarih-etiketi">28 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
+            </div>
             <h2>Adam Asmaca</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Kelime bilginizi test edin. Yenilenen kütüphanesi ile modern bir klasik deneyimi.</p>
@@ -165,7 +195,10 @@
         </article>
 
         <article class="kart yeni-proje">
-            <div class="kart-ust"><span class="tarih-etiketi">27 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
+            <div class="kart-ust">
+                <span class="tarih-etiketi">27 OCAK 2026</span>
+                <span class="yeni-etiketi">YENİ</span>
+            </div>
             <h2>Çağan Haber</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
             <p>Spor dünyasındaki tüm gelişmeleri anlık olarak takip edin. Özel analizler burada.</p>
@@ -270,9 +303,10 @@
 
         function projeyiBaslat(link) {
             const ses = document.getElementById('tiklama-sesi');
-            ses.currentTime = 0;
-            ses.play().catch(e => console.log("Ses oynatılamadı:", e));
-            
+            if(ses) {
+                ses.currentTime = 0;
+                ses.play().catch(e => console.log("Ses engellendi."));
+            }
             document.getElementById('gecis-ekrani').style.display = 'flex';
             setTimeout(() => { window.location.href = link; }, 1500);
         }
@@ -283,15 +317,9 @@
                     title: baslik,
                     text: 'Çağan Yeşilyurt V3 portalındaki bu harika içeriğe bakmalısın!',
                     url: window.location.href
-                }).catch(() => {});
+                });
             } else {
-                const el = document.createElement('textarea');
-                el.value = window.location.href;
-                document.body.appendChild(el);
-                el.select();
-                document.execCommand('copy');
-                document.body.removeChild(el);
-                alert("Site bağlantısı kopyalandı, arkadaşlarına gönderebilirsin!");
+                alert("Bağlantı kopyalandı!");
             }
         }
 
@@ -304,16 +332,16 @@
         setInterval(() => {
             const sayac = document.getElementById('oyuncu-sayisi');
             if(sayac) {
-                let suankiDeger = parseInt(sayac.innerText.replace(/,/g, ''));
+                let suankiDeger = parseInt(sayac.innerText);
                 let degisim = Math.floor(Math.random() * 5 - 2); 
                 let yeniDeger = suankiDeger + degisim;
-                if(yeniDeger < 0) yeniDeger = 0;
-                if(yeniDeger > 50) yeniDeger = 50;
-                sayac.innerText = yeniDeger.toString();
+                if(yeniDeger < 35) yeniDeger = 35;
+                if(yeniDeger > 55) yeniDeger = 55;
+                sayac.innerText = yeniDeger;
             }
-        }, 300000);
+        }, 5000);
 
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
-</body>  
+</body>
 </html>
