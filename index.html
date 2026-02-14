@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Çağan Yeşilyurt V3 | Ücretsiz Online Oyunlar & Dijital Eğlence</title>
-    <meta name="description" content="Çağan Yeşilyurt V3: Stack Game, Cyber Runner, Cagan Build ve Adam Asmaca gibi popüler oyunları ücretsiz oynayın. 2026 model eğlence ve teknoloji portalı!">
-    <meta name="keywords" content="Çağan Yeşilyurt, Stack Game, Cyber Runner, Cagan Build, ücretsiz online oyunlar, 2026 oyun projeleri, yerli oyun geliştirici, Adam Asmaca, Çağan Haber">
+    <title>Çağan Yeşilyurt V4 | Ücretsiz Online Oyunlar & Çağan AI</title>
+    <meta name="description" content="Çağan Yeşilyurt V4: Stack Game, Cyber Runner, Cagan Build ve Adam Asmaca gibi popüler oyunları ücretsiz oynayın. 2026 model eğlence ve teknoloji ekosistemine hoş geldiniz">
+    <meta name="keywords" content="Çağan Yeşilyurt, Stack Game, Cyber Runner, Cagan Build, ücretsiz online oyunlar, 2026 oyun projeleri, yerli oyun geliştirici, Adam Asmaca, Çağan Haber, Çağan AI">
     <meta name="author" content="Çağan Yeşilyurt">
     <meta name="theme-color" content="#0ea5e9">
 
@@ -32,6 +32,7 @@
 
         body.isik-modu { background-color: var(--arka-plan-acik); color: var(--yazi-acik); }
 
+        /* YÜKLEME EKRANLARI */
         #giris-ekrani {
             position: fixed; inset: 0; background: #020617; z-index: 10000;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -46,32 +47,29 @@
             display: none; flex-direction: column; justify-content: center; align-items: center;
         }
 
+        /* NAVBAR */
         .ust-menu { position: fixed; top: 0; width: 100%; padding: 15px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(2,6,23,0.7); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); box-sizing: border-box; }
         .logo-alani { display: flex; align-items: center; gap: 15px; font-weight: 900; font-size: 1.8rem; }
         .logo-resim { width: 45px; height: 45px; border-radius: 12px; border: 2px solid var(--vurgu-rengi); }
 
+        /* HEADER */
         header { padding: 160px 20px 80px; text-align: center; }
         h1 { font-size: 4.5rem; margin: 0; background: linear-gradient(135deg, #fff 0%, #64748b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
         .canli-panel { display: inline-flex; align-items: center; gap: 10px; background: rgba(14, 165, 233, 0.1); padding: 10px 25px; border-radius: 100px; border: 1px solid var(--vurgu-rengi); color: var(--vurgu-rengi); font-weight: 700; margin-bottom: 25px; }
 
+        /* KARTLAR */
         .ana-konteyner { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 40px; max-width: 1500px; margin: 0 auto; }
         .kart {
             background: var(--kart-koyu); border: 1px solid rgba(255,255,255,0.05); border-radius: 35px;
             padding: 40px; transition: 0.5s; position: relative; display: flex; flex-direction: column;
         }
-
-        .kart.yeni-proje {
-            border: 2px solid var(--tehlike-kirmizi) !important;
-            box-shadow: 0 0 20px var(--kirmizi-isik);
-        }
-
+        .kart.yeni-proje { border: 2px solid var(--tehlike-kirmizi) !important; box-shadow: 0 0 20px var(--kirmizi-isik); }
         .isik-modu .kart { background: var(--kart-acik); border-color: rgba(0,0,0,0.05); color: var(--yazi-acik); }
         .kart:hover { transform: translateY(-15px); border-color: var(--vurgu-rengi); }
 
         .kart-ust { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .tarih-etiketi { font-size: 0.8rem; font-weight: 800; opacity: 0.5; }
         .yeni-etiketi { background: var(--tehlike-kirmizi); color: white; padding: 5px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 900; }
-
         .uyumluluk-etiketi { font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 6px; }
         .uyumlu-yesil { color: var(--basari-yesili); }
         .uyumlu-kirmizi { color: var(--tehlike-kirmizi); }
@@ -79,32 +77,43 @@
         .buton-grubu { display: flex; gap: 10px; margin-top: auto; }
         .buton { background: var(--vurgu-rengi); color: white; padding: 18px; border-radius: 18px; text-decoration: none; font-weight: 800; text-align: center; border: none; cursor: pointer; flex-grow: 1; transition: 0.3s; }
         .kart.yeni-proje .buton { background: var(--tehlike-kirmizi); }
-        
         .paylas-btn { width: 60px; background: rgba(255,255,255,0.05); border-radius: 18px; border: 1px solid rgba(255,255,255,0.1); color: inherit; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
         .paylas-btn:hover { background: var(--vurgu-rengi); color: white; }
 
+        /* SSS & GİZLİLİK */
         .sss-bolumu { max-width: 1100px; margin: 100px auto; padding: 0 20px; }
         .sss-kapsayici { background: rgba(255,255,255,0.02); padding: 50px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.05); }
         .sss-soru-cevap { margin-top: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px; }
         .sss-soru-cevap h4 { color: var(--vurgu-rengi); font-size: 1.3rem; margin-bottom: 12px; font-weight: 800; }
         .sss-soru-cevap p { opacity: 0.7; line-height: 1.8; margin: 0; }
-
-        /* Privacy Policy Ek Stillere */
-        .gizlilik-notu { 
-            margin-top: 50px; text-align: center; padding: 30px; 
-            background: rgba(16, 185, 129, 0.05); border: 1px dashed var(--basari-yesili); 
-            border-radius: 25px; 
-        }
+        .gizlilik-notu { margin-top: 50px; text-align: center; padding: 30px; background: rgba(16, 185, 129, 0.05); border: 1px dashed var(--basari-yesili); border-radius: 25px; }
         .gizlilik-notu h5 { color: var(--basari-yesili); margin: 0 0 10px 0; font-size: 1.1rem; }
-        .gizlilik-notu p { font-size: 0.9rem; opacity: 0.8; margin: 0; }
+
+        /* ÇAĞAN AI */
+        #ai-asistan-konteyner { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
+        #ai-buton { 
+            width: 70px; height: 70px; background: var(--vurgu-rengi); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; color: white; 
+            font-size: 1.8rem; cursor: pointer; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.5);
+            transition: 0.4s; border: 3px solid rgba(255,255,255,0.2);
+        }
+        #ai-pencere {
+            position: absolute; bottom: 90px; right: 0; width: 350px; height: 500px;
+            background: var(--kart-koyu); border: 1px solid var(--vurgu-rengi);
+            border-radius: 30px; display: none; flex-direction: column; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); backdrop-filter: blur(20px);
+        }
+        .ai-ust { background: var(--vurgu-rengi); padding: 20px; color: white; font-weight: 900; display: flex; justify-content: space-between; }
+        #ai-mesaj-alani { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+        .ai-mesaj { background: rgba(255,255,255,0.05); padding: 12px 18px; border-radius: 20px; border-bottom-left-radius: 5px; max-width: 85%; font-size: 0.9rem; align-self: flex-start; }
+        .kullanici-mesaj { background: var(--vurgu-rengi); color: white; padding: 12px 18px; border-radius: 20px; border-bottom-right-radius: 5px; align-self: flex-end; font-size: 0.9rem; }
+        .ai-secenekler { padding: 15px; display: flex; flex-wrap: wrap; gap: 8px; background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.05); overflow-y: auto; max-height: 150px; }
+        .ai-chip { background: rgba(255,255,255,0.1); border: 1px solid var(--vurgu-rengi); color: white; padding: 8px 12px; border-radius: 12px; font-size: 0.75rem; cursor: pointer; font-weight: 600; }
 
         footer { padding: 80px 20px; background: #010409; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
         .telif-hakki { margin-top: 40px; opacity: 0.4; font-size: 0.8rem; line-height: 2; letter-spacing: 1px; }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .ust-menu { padding: 15px 25px; }
-        }
+        @media (max-width: 768px) { h1 { font-size: 2.8rem; } .ust-menu { padding: 15px 25px; } #ai-pencere { width: 300px; right: -10px; } }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -115,44 +124,44 @@
 
     <div id="giris-ekrani">
         <div class="yukleme-baslik">Çağan Yeşilyurt</div>
-        <div style="color: var(--vurgu-rengi); font-weight: bold; letter-spacing: 4px; margin-bottom: 20px;">SÜRÜM 3.0</div>
+        <div style="color: var(--vurgu-rengi); font-weight: bold; letter-spacing: 4px; margin-bottom: 20px;">SÜRÜM 4.0 AI</div>
         <div class="cubuk-dis"><div id="yukleme-bari" class="cubuk-ic"></div></div>
     </div>
 
     <div id="gecis-ekrani">
         <div style="font-size: 5rem; color: var(--tehlike-kirmizi);"><i class="fas fa-microchip fa-spin"></i></div>
-        <h2 style="color:white; font-size: 2.2rem; margin-top:30px; font-weight: 900;">PROJE AÇILIYOR</h2>
+        <h2 style="color:white; font-size: 2.2rem; margin-top:30px; font-weight: 900;">AI SİSTEMİ AÇILIYOR</h2>
+    </div>
+
+    <div id="ai-asistan-konteyner">
+        <div id="ai-pencere">
+            <div class="ai-ust"><span><i class="fas fa-robot"></i> ÇAĞAN AI</span><i class="fas fa-times" onclick="aiKapat()" style="cursor:pointer"></i></div>
+            <div id="ai-mesaj-alani"><div class="ai-mesaj">Merhaba! Ben Çağan AI. Oyunlar, güvenlik veya portalın işleyişi hakkında her şeyi bana sorabilirsin.</div></div>
+            <div class="ai-secenekler" id="ai-butonlar"></div>
+        </div>
+        <div id="ai-buton" onclick="aiAc()"><i class="fas fa-robot"></i></div>
     </div>
 
     <nav class="ust-menu">
         <div class="logo-alani">
             <img src="https://i.ibb.co/bgM6pB5P/image.png" alt="Logo" class="logo-resim">
-            <span>CAGAN<span style="color:var(--vurgu-rengi)">V3</span></span>
+            <span>CAGAN<span style="color:var(--vurgu-rengi)">V4 AI</span></span>
         </div>
-        <div onclick="temaDegistir()" style="cursor:pointer; color: var(--vurgu-rengi); font-size: 1.4rem;">
-            <i class="fas fa-circle-half-stroke" id="tema-ikonu"></i>
-        </div>
+        <div onclick="temaDegistir()" style="cursor:pointer; color: var(--vurgu-rengi); font-size: 1.4rem;"><i class="fas fa-circle-half-stroke" id="tema-ikonu"></i></div>
     </nav>
 
     <header>
         <div class="canli-panel"><i class="fas fa-users"></i> AKTİF OYUNCU: <span id="oyuncu-sayisi">42</span></div>
         <h1>Dijital Gelecek<br>Burada Başlıyor</h1>
-        <p style="max-width: 600px; margin: 30px auto; opacity: 0.6; line-height: 1.8;">
-            Çağan Yeşilyurt tarafından tasarlanan 2026 model eğlence ve teknoloji ekosistemine hoş geldiniz.
-        </p>
+        <p style="max-width: 600px; margin: 30px auto; opacity: 0.6; line-height: 1.8;">Çağan Yeşilyurt tarafından tasarlanan 2026 model eğlence ve teknoloji ekosistemine hoş geldiniz.</p>
     </header>
 
     <main class="ana-konteyner">
         <article class="kart yeni-proje">
-            <div class="kart-ust">
-                <span class="tarih-etiketi">07 ŞUBAT 2026</span>
-                <span class="yeni-etiketi">YENİ</span>
-            </div>
+            <div class="kart-ust"><span class="tarih-etiketi">07 ŞUBAT 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Stack Game</h2>
-            <div class="uyumluluk-etiketi uyumlu-yesil">
-                <i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur
-            </div>
-            <p>Blokları üst üste dizerek gökyüzüne ulaş! En yüksek skoru yap ve dengeni koru. Hızlı ol ama dikkatli davran.</p>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
+            <p>Blokları üst üste dizerek gökyüzüne ulaş! En yüksek skoru yap ve dengeni koru.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('http://caganyesilyurt.com/Stack-Game/')" class="buton">HEMEN OYNA</button>
                 <button onclick="paylas('Stack Game')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -160,14 +169,10 @@
         </article>
 
         <article class="kart">
-            <div class="kart-ust">
-                <span class="tarih-etiketi">09 OCAK 2026</span>
-            </div>
+            <div class="kart-ust"><span class="tarih-etiketi">09 OCAK 2026</span></div>
             <h2>Restoran Simülasyonu</h2>
-            <div class="uyumluluk-etiketi uyumlu-yesil">
-                <i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur
-            </div>
-            <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüterek bir imparatorluk kur.</p>
+            <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
+            <p>Kendi restoranının şefi ol. Müşteri siparişlerini hazırla ve işletmeni büyüt.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/restaurant-sim-lasyon/')" class="buton">YÖNETMEYE BAŞLA</button>
                 <button onclick="paylas('Restoran Simülasyonu')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -175,13 +180,10 @@
         </article>
 
         <article class="kart yeni-proje">
-            <div class="kart-ust">
-                <span class="tarih-etiketi">29 OCAK 2026</span>
-                <span class="yeni-etiketi">YENİ</span>
-            </div>
+            <div class="kart-ust"><span class="tarih-etiketi">29 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Cyber Runner</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
-            <p>Siber bir dünyada sonsuz bir hız deneyimi. Engellerden kaçın ve limitlerini zorla!</p>
+            <p>Siber bir dünyada sonsuz bir hız deneyimi. Engellerden kaçın!</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt.com/CyberRunner/')" class="buton">HEMEN OYNA</button>
                 <button onclick="paylas('Cyber Runner')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -189,13 +191,10 @@
         </article>
 
         <article class="kart yeni-proje">
-            <div class="kart-ust">
-                <span class="tarih-etiketi">28 OCAK 2026</span>
-                <span class="yeni-etiketi">YENİ</span>
-            </div>
+            <div class="kart-ust"><span class="tarih-etiketi">28 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Adam Asmaca</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
-            <p>Kelime bilginizi test edin. Yenilenen kütüphanesi ile modern bir klasik deneyimi.</p>
+            <p>Kelime bilginizi test edin. Yenilenen kütüphanesi ile modern bir klasik.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt.com/AdamAsmaca/')" class="buton">HEMEN OYNA</button>
                 <button onclick="paylas('Adam Asmaca')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -203,13 +202,10 @@
         </article>
 
         <article class="kart yeni-proje">
-            <div class="kart-ust">
-                <span class="tarih-etiketi">27 OCAK 2026</span>
-                <span class="yeni-etiketi">YENİ</span>
-            </div>
+            <div class="kart-ust"><span class="tarih-etiketi">27 OCAK 2026</span><span class="yeni-etiketi">YENİ</span></div>
             <h2>Çağan Haber</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
-            <p>Spor dünyasındaki tüm gelişmeleri anlık olarak takip edin. Özel analizler burada.</p>
+            <p>Spor dünyasındaki tüm gelişmeleri anlık olarak takip edin.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt.com/Cagan-haber/')" class="buton">HABERLERİ OKU</button>
                 <button onclick="paylas('Çağan Haber')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -220,7 +216,7 @@
             <div class="kart-ust"><span class="tarih-etiketi">28 ARALIK 2025</span></div>
             <h2>Cagan Build</h2>
             <div class="uyumluluk-etiketi uyumlu-kirmizi"><i class="fas fa-desktop"></i> Sadece bilgisayar ile uyumludur</div>
-            <p>Yaratıcılığını konuştur! Kendi yapılarını 3 boyutlu olarak tasarla ve inşa et.</p>
+            <p>Yaratıcılığını konuştur! Kendi yapılarını 3 boyutlu olarak tasarla.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/cagan-build/')" class="buton">İNŞA ET</button>
                 <button onclick="paylas('Cagan Build')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -242,7 +238,7 @@
             <div class="kart-ust"><span class="tarih-etiketi">10 EKİM 2025</span></div>
             <h2>Yemek Tarifleri</h2>
             <div class="uyumluluk-etiketi uyumlu-yesil"><i class="fas fa-check-circle"></i> Tüm cihazlar ile uyumludur</div>
-            <p>Mutfağın yıldızı olun. Çağan Yeşilyurt'un özel seçkisiyle en lezzetli tarifler.</p>
+            <p>Mutfağın yıldızı olun. Çağan Yeşilyurt'un özel seçkisiyle tarifler.</p>
             <div class="buton-grubu">
                 <button onclick="projeyiBaslat('https://caganyesilyurt1967-max.github.io/Cagan-Yemek-Tarifleri-/')" class="buton">TARİFLERİ GÖR</button>
                 <button onclick="paylas('Yemek Tarifleri')" class="paylas-btn"><i class="fas fa-share-alt"></i></button>
@@ -255,7 +251,7 @@
             <h3 style="font-size: 2.2rem; color: #fff; margin-bottom: 40px; text-align: center; font-weight: 900;">SIKÇA SORULAN SORULAR</h3>
             <div class="sss-soru-cevap">
                 <h4>Bu platformdaki oyunlar gerçekten tamamen ücretsiz mi?</h4>
-                <p>Evet, Çağan Yeşilyurt V3 üzerindeki tüm içerikler ve oyunlar %100 ücretsizdir. Herhangi bir gizli ücret veya "pay-to-win" sistemi bulunmaz.</p>
+                <p>Evet, Çağan Yeşilyurt V4 üzerindeki tüm içerikler ve oyunlar %100 ücretsizdir. Herhangi bir gizli ücret veya "pay-to-win" sistemi bulunmaz.</p>
             </div>
             <div class="sss-soru-cevap">
                 <h4>Neden üyelik veya giriş yapmam gerekmiyor?</h4>
@@ -276,86 +272,90 @@
 
             <div class="gizlilik-notu">
                 <h5><i class="fas fa-user-shield"></i> Gizlilik Politikası & Veri Güvenliği</h5>
-                <p>Çağan Yeşilyurt V3 portalı, <b>KVKK</b> ve uluslararası veri gizliliği standartlarına uygun olarak tasarlanmıştır. Ziyaretçilerimizin IP adresi, konumu, kimlik bilgileri veya tarayıcı geçmişi <b>asla kayıt altına alınmaz</b>. Oyun skorlarınız sadece tarayıcınızın yerel hafızasında saklanır; sunucularımıza herhangi bir kişisel veri aktarımı gerçekleşmez. Bizimle paylaştığınız tek şey, oyunlardaki eğlencenizdir.</p>
+                <p>Çağan Yeşilyurt V4 portalı, <b>KVKK</b> ve uluslararası veri gizliliği standartlarına uygun olarak tasarlanmıştır. Ziyaretçilerimizin IP adresi, konumu, kimlik bilgileri veya tarayıcı geçmişi <b>asla kayıt altına alınmaz</b>. Oyun skorlarınız sadece tarayıcınızın yerel hafızasında saklanır; sunucularımıza herhangi bir kişisel veri aktarımı gerçekleşmez. Bizimle paylaştığınız tek şey, oyunlardaki eğlencenizdir.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div style="margin-bottom: 40px;">
-            <a href="https://instagram.com/cagan196761" target="_blank" style="color:white; font-size: 3rem;"><i class="fab fa-instagram"></i></a>
-        </div>
+        <div style="margin-bottom: 40px;"><a href="https://instagram.com/cagan196761" target="_blank" style="color:white; font-size: 3rem;"><i class="fab fa-instagram"></i></a></div>
         <p style="font-weight: 900; font-size: 1.4rem; letter-spacing: 2px;">ÇAĞAN YEŞİLYURT &copy; 2026</p>
-        <p class="telif-hakki">
-            TÜM HAKLARI SAKLIDIR. BU SİTEDEKİ TASARIM VE KOD YAPISI ÇAĞAN YEŞİLYURT'A AİTTİR.<br>
-            SİSTEM KİMLİĞİ: CY-V3-PLATIN | LİSANS: ÖZEL PORTAL LİSANSI
-        </p>
+        <p class="telif-hakki">TÜM HAKLARI SAKLIDIR. BU SİTEDEKİ TASARIM VE KOD YAPISI ÇAĞAN YEŞİLYURT'A AİTTİR.<br>SİSTEM KİMLİĞİ: CY-V4-PLATIN | LİSANS: ÖZEL PORTAL LİSANSI</p>
     </footer>
 
     <script>
-        window.addEventListener('pageshow', (event) => {
-            const gecis = document.getElementById('gecis-ekrani');
-            if (gecis) gecis.style.display = 'none';
-        });
+        // --- ÇAĞAN AI GELİŞMİŞ VERİ SETİ ---
+        const aiVerisi = {
+            "Oyuna Nasıl Başlarım?": "Oynamak istediğin oyunun kartındaki 'HEMEN OYNA' butonuna basman yeterli! Sistem seni otomatik olarak güvenli oyun alanına yönlendirecektir.",
+            "Stack Game Taktikleri": "Bloklar hızlandığında ritmini bozma. Odak noktan her zaman bir önceki bloğun kenarı olsun. Sabırlı ol, rekor sabırla gelir!",
+            "Cyber Runner Taktikleri": "Engelleri geçmek için zıplama tuşuna çok kısa bas, havada kalma süreni kontrol et. Gözün hep 2 engel sonrasında olsun.",
+            "XOX Taktikleri": "Stratejik düşün! Her zaman köşelerden birine yerleşerek başla. Rakibini çapraz hatlarla tuzağa düşür.",
+            "Ücretli mi?": "Kesinlikle hayır! Çağan Yeşilyurt portalındaki tüm oyunlar tamamen ücretsizdir ve her zaman öyle kalacaktır.",
+            "Güvenlik & Veriler": "Sıfır veri politikası izliyoruz. Hiçbir bilgin sunucuya gitmez, her şey senin tarayıcında kalır. Tamamen anonimsin.",
+            "Yapımcı Kim?": "Bu portal ve içerisindeki tüm dijital projeler Çağan Yeşilyurt tarafından 'Geleceğin Eğlencesi' vizyonuyla kodlanmıştır.",
+            "Adam Asmaca İpucu": "Harf tahmin ederken önce sesli harflerden (A, E, İ) başla. Kelime kökenini bulman çok daha kolaylaşacaktır.",
+            "Haberleri Nasıl Okurum?": "Çağan Haber kartına git ve 'HABERLERİ OKU' butonuna bas. Spor dünyasından en güncel analizler karşında olacak.",
+            "Cagan Build Hakkında": "Bu bir 3D inşa simülasyonudur. Sadece bilgisayar üzerinden erişilebilir çünkü yüksek grafik performansı gerektirir."
+        };
 
+        function aiAc() { document.getElementById('ai-pencere').style.display = 'flex'; aiButonlariniYazdir(); }
+        function aiKapat() { document.getElementById('ai-pencere').style.display = 'none'; }
+        
+        function aiButonlariniYazdir() {
+            const alan = document.getElementById('ai-butonlar'); alan.innerHTML = "";
+            Object.keys(aiVerisi).forEach(soru => {
+                const btn = document.createElement('div'); btn.className = 'ai-chip'; btn.innerText = soru;
+                btn.onclick = () => {
+                    const mAlani = document.getElementById('ai-mesaj-alani');
+                    const kM = document.createElement('div'); kM.className='kullanici-mesaj'; kM.innerText=soru; mAlani.appendChild(kM);
+                    setTimeout(() => {
+                        const aM = document.createElement('div'); aM.className='ai-mesaj'; aM.innerText=aiVerisi[soru]; mAlani.appendChild(aM);
+                        mAlani.scrollTop = mAlani.scrollHeight;
+                    }, 400);
+                };
+                alan.appendChild(btn);
+            });
+        }
+
+        // --- YÜKLEME VE SAYAÇ (GECE/GÜNDÜZ AYARLI) ---
         window.addEventListener('load', () => {
             const bar = document.getElementById('yukleme-bari');
-            let ilerleme = 0;
-            const zamanlayici = setInterval(() => {
-                ilerleme += Math.random() * 15;
-                if(ilerleme > 100) ilerleme = 100;
-                bar.style.width = ilerleme + '%';
-                if(ilerleme >= 100) {
-                    clearInterval(zamanlayici);
-                    setTimeout(() => {
-                        document.getElementById('giris-ekrani').style.transform = 'translateY(-100%)';
-                    }, 500);
-                }
+            let i = 0; const t = setInterval(() => {
+                i += Math.random() * 15; if(i>100) i=100; bar.style.width = i+'%';
+                if(i>=100) { clearInterval(t); setTimeout(() => { document.getElementById('giris-ekrani').style.transform = 'translateY(-100%)'; }, 500); }
             }, 50);
         });
 
-        function projeyiBaslat(link) {
-            const ses = document.getElementById('tiklama-sesi');
-            if(ses) {
-                ses.currentTime = 0;
-                ses.play().catch(e => console.log("Ses engellendi."));
+        function oyuncuSayisiniGuncelle() {
+            const s = document.getElementById('oyuncu-sayisi');
+            if(!s) return;
+            
+            const saat = new Date().getHours();
+            let min, max;
+
+            if (saat >= 0 && saat < 7) { 
+                // Gece 00:00 - 07:00 arası 1-10 oyuncu
+                min = 1; max = 10;
+            } else { 
+                // Gündüz normal aralık
+                min = 35; max = 55;
             }
-            document.getElementById('gecis-ekrani').style.display = 'flex';
-            setTimeout(() => { window.location.href = link; }, 1500);
+
+            let suanki = parseInt(s.innerText);
+            let hedef = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            // Ani değişim olmaması için yavaşça yaklaştırıyoruz
+            if (suanki < hedef) suanki++;
+            else if (suanki > hedef) suanki--;
+            
+            s.innerText = suanki;
         }
+        setInterval(oyuncuSayisiniGuncelle, 3000); // Her 3 saniyede bir yumuşak geçiş
 
-        function paylas(baslik) {
-            if (navigator.share) {
-                navigator.share({
-                    title: baslik,
-                    text: 'Çağan Yeşilyurt V3 portalındaki bu harika içeriğe bakmalısın!',
-                    url: window.location.href
-                });
-            } else {
-                alert("Bağlantı kopyalandı!");
-            }
-        }
-
-        function temaDegistir() {
-            document.body.classList.toggle('isik-modu');
-            const ikon = document.getElementById('tema-ikonu');
-            ikon.className = document.body.classList.contains('isik-modu') ? 'fas fa-sun' : 'fas fa-circle-half-stroke';
-        }
-
-        setInterval(() => {
-            const sayac = document.getElementById('oyuncu-sayisi');
-            if(sayac) {
-                let suankiDeger = parseInt(sayac.innerText);
-                let degisim = Math.floor(Math.random() * 5 - 2); 
-                let yeniDeger = suankiDeger + degisim;
-                                if(yeniDeger < 35) yeniDeger = 35;
-                if(yeniDeger > 55) yeniDeger = 55;
-                sayac.innerText = yeniDeger;
-            }
-        }, 5000);
-
+        function projeyiBaslat(l) { document.getElementById('gecis-ekrani').style.display = 'flex'; setTimeout(() => { window.location.href = l; }, 1500); }
+        function temaDegistir() { document.body.classList.toggle('isik-modu'); }
+        function paylas(b) { if(navigator.share) navigator.share({title:b, url:window.location.href}); else alert("Kopyalandı!"); }
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
 </html>
-                            
