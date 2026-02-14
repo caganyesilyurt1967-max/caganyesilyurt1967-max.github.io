@@ -60,7 +60,6 @@
             padding: 40px; transition: 0.5s; position: relative; display: flex; flex-direction: column;
         }
 
-        /* Yeni/Vurgulu Proje Stili */
         .kart.yeni-proje {
             border: 2px solid var(--tehlike-kirmizi) !important;
             box-shadow: 0 0 20px var(--kirmizi-isik);
@@ -89,6 +88,15 @@
         .sss-soru-cevap { margin-top: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px; }
         .sss-soru-cevap h4 { color: var(--vurgu-rengi); font-size: 1.3rem; margin-bottom: 12px; font-weight: 800; }
         .sss-soru-cevap p { opacity: 0.7; line-height: 1.8; margin: 0; }
+
+        /* Privacy Policy Ek Stillere */
+        .gizlilik-notu { 
+            margin-top: 50px; text-align: center; padding: 30px; 
+            background: rgba(16, 185, 129, 0.05); border: 1px dashed var(--basari-yesili); 
+            border-radius: 25px; 
+        }
+        .gizlilik-notu h5 { color: var(--basari-yesili); margin: 0 0 10px 0; font-size: 1.1rem; }
+        .gizlilik-notu p { font-size: 0.9rem; opacity: 0.8; margin: 0; }
 
         footer { padding: 80px 20px; background: #010409; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
         .telif-hakki { margin-top: 40px; opacity: 0.4; font-size: 0.8rem; line-height: 2; letter-spacing: 1px; }
@@ -265,6 +273,11 @@
                 <h4>Yeni oyunlar ne sıklıkla ekleniyor?</h4>
                 <p>Portalımız sürekli güncellenmektedir. Kullanıcı talepleri doğrultusunda her ay yeni dijital projeler ve içerikler sisteme dahil edilmektedir.</p>
             </div>
+
+            <div class="gizlilik-notu">
+                <h5><i class="fas fa-user-shield"></i> Gizlilik Politikası & Veri Güvenliği</h5>
+                <p>Çağan Yeşilyurt V3 portalı, <b>KVKK</b> ve uluslararası veri gizliliği standartlarına uygun olarak tasarlanmıştır. Ziyaretçilerimizin IP adresi, konumu, kimlik bilgileri veya tarayıcı geçmişi <b>asla kayıt altına alınmaz</b>. Oyun skorlarınız sadece tarayıcınızın yerel hafızasında saklanır; sunucularımıza herhangi bir kişisel veri aktarımı gerçekleşmez. Bizimle paylaştığınız tek şey, oyunlardaki eğlencenizdir.</p>
+            </div>
         </div>
     </section>
 
@@ -335,7 +348,7 @@
                 let suankiDeger = parseInt(sayac.innerText);
                 let degisim = Math.floor(Math.random() * 5 - 2); 
                 let yeniDeger = suankiDeger + degisim;
-                if(yeniDeger < 35) yeniDeger = 35;
+                                if(yeniDeger < 35) yeniDeger = 35;
                 if(yeniDeger > 55) yeniDeger = 55;
                 sayac.innerText = yeniDeger;
             }
@@ -345,3 +358,4 @@
     </script>
 </body>
 </html>
+                            
